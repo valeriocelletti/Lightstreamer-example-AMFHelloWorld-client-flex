@@ -1,6 +1,6 @@
 # "Hello World" for Flex AMF with Lightstreamer #
 
-In this fourth installment of the "Hello World with Lightstreamer" series, we will focus on a new feature that was [released] with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
+In this fourth installment of the "Hello World with Lightstreamer" series, we will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
 
 First, a quick recap of the previous installments:
 
@@ -21,7 +21,7 @@ The Flex Client library for Lightstreamer has been used for one of the <b>major 
 
 When approaching the Lightstreamer <b>data model</b>, it is important to choose the right trade-off between using <i>fine-grained fields and coarse objects</i>. You could map each individual atomic piece of information to a Lightstreamer field, thus using many fields and items, or you could map all your data to a single field of a single item. This applies to both text-based fields (where you can encode coarse objects via JSON, XML, etc.) and object-based fields (via AMF). Usually, going for fine-grained fields is better, because you let Lightstreamer know more about your data structure, so that it will be able to apply optimization mechanisms, like conflation and delta delivery. On the other hand, if you go for huge opaque objects, Lightstreamer will be used more as a blind pipe. But in both cases, you will still benefit from other features, like bandwidth allocation and dynamic throttling. All intermediate scenarios are possible too.<br>
 
-In the tutorial below, Simone will use a single field containing an AMF object derived from a JavaBean. To encode a JavaBean as an AMF object, several ready-made libraries exist. Here we will leverage BlazeDS.<br>
+In the sections below, it will be used a single field containing an AMF object derived from a JavaBean. To encode a JavaBean as an AMF object, several ready-made libraries exist. Here we will leverage BlazeDS.<br>
 
 ## AMF Lightstreamer Tutorial ##
 
