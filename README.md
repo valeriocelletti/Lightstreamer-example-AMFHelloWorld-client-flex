@@ -11,9 +11,9 @@ First, a quick recap of the previous installments:
 Basically, Lightstreamer Server can be seen as a "technology hub" for data push, where you can mix different technologies on the client-side and on the server-side to exchange real-time messages.<br>
 ![Schema](http://cometdaily.com/wp-content/uploads/2010/03/technology-hub1.png)
 
-In this article, we will delve into the "Flex on the client-side, Java on the server-side" scenario.<br>
+We will delve into the "Flex on the client-side, Java on the server-side" scenario and, in this project, full details for the client-side will be provided.<br>
 
-In particular, Simone Fabiano will show you how to push binary ActionScript objects directly to your Flex application in real-time, using AMF. [Action Message Format](http://en.wikipedia.org/wiki/Action_Message_Format) is used for serializing binary ActionScript objects in order to transmit them over the wire.<br>
+In particular, it will be shown you how to push binary ActionScript objects directly to your Flex application in real-time, using AMF. [Action Message Format](http://en.wikipedia.org/wiki/Action_Message_Format) is used for serializing binary ActionScript objects in order to transmit them over the wire.<br>
 
 As you may recall form the [first installment](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), Lightstreamer data push model is based on items made up of fields. A client can subscribe to many items, each with its own schema (a set of fields). Each field is usually a text string with an arbitrary length (from a few characters to large data structures, perhaps based on XML, JSON, etc.). With this new Lightstreamer feature, you can now put a full AMF object into any field and have it pushed from the server to the client in real binary format (with no re-encondings).<br>
 
