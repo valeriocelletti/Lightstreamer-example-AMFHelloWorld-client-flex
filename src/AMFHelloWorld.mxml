@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()">
+  
+  <mx:TextArea width="693" height="56" id="myTextArea" fontSize="25" fontWeight="bold" text="loading..."/>
+   
+  <mx:Script> 
+    <![CDATA[
+      import mx.formatters.DateFormatter;
+      import com.lightstreamer.as_client.ConnectionInfo;
+      import com.lightstreamer.as_client.LSClient;
+      import com.lightstreamer.as_client.NonVisualTable;
+      import com.lightstreamer.as_client.events.NonVisualItemUpdateEvent;
+      
+      public var dateFormatter:DateFormatter = new DateFormatter();
+      
+      public function init():void {
+        dateFormatter.formatString = "MM/DD/YY J:NN:SS"; 
+      
+        var cInfo:ConnectionInfo = new ConnectionInfo();
+        cInfo.server = "localhost";
+        cInfo.adapterSet = "AMFHELLOWORLD";
+        
+        var client:LSClient = new LSClient();
+      
+        var nonVisualTable:NonVisualTable = new NonVisualTable(["greetings"],["AMF_field","AMF_simple_bool","AMF_bool"],"MERGE",true);
+        nonVisualTable.addEventListener(NonVisualItemUpdateEvent.NON_VISUAL_ITEM_UPDATE,onChange);
+        client.subscribeTable(nonVisualTable);
+      
+        client.openConnection(cInfo);
+      }
+    
+      public function onChange(evt:NonVisualItemUpdateEvent):void {
+        if (evt.isFieldChanged("AMF_field")) {
+          var obj:* = evt.getFieldValue("AMF_field");
+          myTextArea.text = dateFormatter.format(obj.now) + " " + obj.hello;
+          
+          var simpleBool:* = evt.getFieldValue("AMF_simple_bool");
+          if (simpleBool === true) {
+            myTextArea.text += "--TRUE--";
+          } else {
+            myTextArea.text += "--FALSE--";
+          }
+          
+          var obBool:* = evt.getFieldValue("AMF_bool");
+          if (obBool.bool === true) {
+            myTextArea.text += "--TRUE--";
+          } else {
+            myTextArea.text += "--FALSE--";
+          }
+        }
+      }    
+      
+    ]]>
+  </mx:Script>
+</mx:Application>

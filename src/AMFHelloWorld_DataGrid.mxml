@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()">
+	
+	<mx:DataGrid width="479" x="447.5" height="91" id="helloView" y="12" >
+    <mx:columns>
+      <mx:DataGridColumn dataField="AMF_field.now" headerText="Time" labelFunction="formatDate" />
+      <mx:DataGridColumn dataField="AMF_field.hello" headerText="Hello"/>
+    </mx:columns>
+  </mx:DataGrid>
+  
+  <mx:DateFormatter id="dateFormatter" formatString="MM/DD/YY J:NN:SS" />
+	
+	<mx:Script> 
+		<![CDATA[
+			import com.lightstreamer.as_client.VisualTable;
+			import com.lightstreamer.as_client.ConnectionInfo;
+			import com.lightstreamer.as_client.LSClient;
+			
+			[Bindable]
+			public var myTable:VisualTable;
+		
+			public function init():void {
+				var cInfo:ConnectionInfo = new ConnectionInfo();
+				cInfo.server = "localhost";
+				cInfo.adapterSet = "AMFHELLOWORLD";
+				
+				var client:LSClient = new LSClient();
+			
+				var myTable:VisualTable = new VisualTable(["greetings"],["AMF_field"],"MERGE",true);
+				helloView.dataProvider = myTable;
+				client.subscribeTable(myTable);
+			
+				client.openConnection(cInfo);
+				
+			}
+						
+			public function formatDate(item:Object,column:DataGridColumn):String {
+        return dateFormatter.format(item.AMF_field.now);
+      }
+			
+		]]>
+	</mx:Script>
+</mx:Application>

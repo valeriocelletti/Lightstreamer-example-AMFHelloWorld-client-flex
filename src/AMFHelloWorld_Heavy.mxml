@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" creationComplete="init()">
+  
+  <mx:TextArea width="693" height="56" id="myTextArea" fontSize="25" fontWeight="bold" text="loading..."/>
+  
+  <mx:Script> 
+    <![CDATA[
+      import com.lightstreamer.as_client.ConnectionInfo;
+      import com.lightstreamer.as_client.LSClient;
+      import com.lightstreamer.as_client.NonVisualTable;
+      import com.lightstreamer.as_client.events.DataErrorEvent;
+      import com.lightstreamer.as_client.events.NonVisualItemUpdateEvent;
+//      import com.lightstreamer.as_client.logger.BufferedAppender;
+      import com.lightstreamer.as_client.logger.Logger;
+      import com.lightstreamer.as_client.logger.TraceAppender;
+      
+      import mx.formatters.DateFormatter;
+      
+      public var dateFormatter:DateFormatter = new DateFormatter();
+      
+      public var count:uint = 0;
+      public var client:LSClient = new LSClient();
+      
+    //  public var buffer:BufferedAppender = new BufferedAppender(Logger.DEBUG,600);
+      public var listener:TraceAppender = new TraceAppender(Logger.WARN);
+      
+      public function init():void {
+        
+        client.addEventListener(DataErrorEvent.DATA_ERROR,onDataError);
+        
+        dateFormatter.formatString = "MM/DD/YY J:NN:SS"; 
+        
+        var cInfo:ConnectionInfo = new ConnectionInfo();
+        cInfo.server = "localhost";
+        cInfo.adapterSet = "AMFHELLOWORLD";
+        
+        //NOTE the log for the com.lightstreamer.as_client.ConnectionHandlerDetails category is commented in the code
+        //Logger.getLogger("com.lightstreamer.as_client.ConnectionHandlerDetails").addLoggerListener(buffer);
+        Logger.getLogger("com.lightstreamer.as_client").addLoggerListener(listener);
+        
+        newTable(["AMF_field"]);
+        newTable(["AMF_field","AMF_field2"]);
+        newTable(["AMF_field","AMF_field2","AMF_field3"]);
+        newTable(["AMF_field","AMF_field2","AMF_field"]);
+        newTable(["AMF_field","AMF_field","AMF_field2"]);
+        newTable(["AMF_field2","AMF_field","AMF_field"]);
+        
+        client.openConnection(cInfo);
+      }
+      
+      public function newTable(schema:Array):void {
+        var nonVisualTable:NonVisualTable = new NonVisualTable(["greetings"],schema,"RAW",true);
+        nonVisualTable.addEventListener(NonVisualItemUpdateEvent.NON_VISUAL_ITEM_UPDATE,onChange);
+        client.subscribeTable(nonVisualTable);
+      }
+      
+      public function onChange(evt:NonVisualItemUpdateEvent):void {
+        count++;
+        myTextArea.text = count + "";
+      }    
+      
+      public function onDataError(evt:DataErrorEvent):void {
+//        buffer.flush(listener);
+        trace("DataErrorEvent " + evt.error.message);
+        count++;
+      }
+      
+    ]]>
+  </mx:Script>
+</mx:Application>
