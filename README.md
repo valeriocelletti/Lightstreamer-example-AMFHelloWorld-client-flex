@@ -9,7 +9,7 @@ First, a quick recap of the previous installments:
 - ["Hello World" for Sockets with Lightstreamer](http://cometdaily.com/2008/07/29/hello-world-for-sockets-with-lightstreamer/): The TCP-socket-based version of the Data Adapter, suitable for implementation in other languages (PHP, Python, Perl, etc).
 
 Basically, Lightstreamer Server can be seen as a "technology hub" for data push, where you can mix different technologies on the client-side and on the server-side to exchange real-time messages.<br>
-![Schema](http://cometdaily.com/wp-content/uploads/2010/03/technology-hub1.png)
+![Schema](technology-hub1.png)
 
 We will delve into the "Flex on the client-side, Java on the server-side" scenario and, in this project, full details for the client-side will be provided.<br>
 
