@@ -155,7 +155,7 @@ Please also consider that the Flex client library in this tutorial is not availa
 
 ## Lightstreamer Adapters needed by this demo client ##
 
-* [Lightstreamer AMF "Hello World" Adapter for Java]()
+* [Lightstreamer AMF "Hello World" Adapter for Java](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java)
 
 ## Related projects ##
 
