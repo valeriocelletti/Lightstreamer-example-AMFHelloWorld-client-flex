@@ -166,4 +166,4 @@ Please also consider that the Flex client library in this tutorial is not availa
 # Lightstreamer Compatibility Notes #
 
 - Compatible with Lightstreamer Flex Client Library version 2.0 or newer.
-- For Lightstreamer Allegro+, Presto, Vivace.
+- For Lightstreamer Allegro (+ Flex Client API support), Presto, Vivace.
