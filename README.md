@@ -1,12 +1,12 @@
-# "Hello World" for Flex AMF with Lightstreamer #
+# Lightstreamer - "Hello World" Tutorial - Flex (AMF) Client  #
 
 This project, of the "Hello World with Lightstreamer" series, will focus on a new feature that was [released](http://cometdaily.com/2010/02/22/lightstreamer-36-released/) with [Lightstreamer Server](http://www.lightstreamer.com/download.htm) since version 3.6: <b>Action Message Format (AMF)</b> support for Flex applications.
 
 First, a quick recap of the previous installments:
 
-- "Hello World" with Lightstreamer: An introduction to Lightstreamer's data model, [JavaScript Client API](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), and [Java Data Adapters API](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java).
-- ["Hello World" for .NET with Lightstreamer](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet): The .NET API version of the Data Adapter used in the "Hello World" application, showing both a C# and a Visual Basic port.
-- ["Hello World" for Sockets with Lightstreamer](http://cometdaily.com/2008/07/29/hello-world-for-sockets-with-lightstreamer/): The TCP-socket-based version of the Data Adapter, suitable for implementation in other languages (PHP, Python, Perl, etc).
+- "Hello World" with Lightstreamer: An introduction to Lightstreamer's data model, JavaScript Client API (see  [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript)), and Java Data Adapters API (see [Lightstreamer - "Hello World" Tutorial - Java SE Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java)).
+- [Lightstreamer - "Hello World" Tutorial - .NET Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-dotnet): The .NET API version of the Data Adapter used in the "Hello World" application, showing both a C# and a Visual Basic port.
+- [Lightstreamer - "Hello World" Tutorial - TCP Sockets Adapter](http://cometdaily.com/2008/07/29/hello-world-for-sockets-with-lightstreamer/): The TCP-socket-based version of the Data Adapter, suitable for implementation in other languages (PHP, Python, Perl, etc).
 
 Basically, Lightstreamer Server can be seen as a "technology hub" for data push, where you can mix different technologies on the client-side and on the server-side to exchange real-time messages.<br>
 ![Schema](technology-hub1.png)
@@ -29,7 +29,7 @@ This project focuses on a simple "Hello World" example to show how to use AMF wi
 
 For this tutorial, I'm assuming you have already read the Basic Hello World example, or that you are already familiar with Lightstreamer concepts.
 
-On the client, the result of this tutorial will be quite similar to the one obtained with the original [Hello World for JavaScript](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), but in Flex: we'll get a string alternating some different values (Hello AMF World) and a timestamp. On the server-side, data will be encapsulated into a <b>JavaBean</b> containing a String and a Date instance. This bean will be translated into a byte array and then injected into the Lightstreamer kernel as a single field, instead of being spread over different fields as simple strings (as the original adapter does). Here lies the power of AMF, as you will be able to push even complex JavaBeans to your Flex clients with ease.
+On the client, the result of this tutorial will be quite similar to the one obtained with the original [Lightstreamer - "Hello World" Tutorial - for JavaScript](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), but in Flex: we'll get a string alternating some different values (Hello AMF World) and a timestamp. On the server-side, data will be encapsulated into a <b>JavaBean</b> containing a String and a Date instance. This bean will be translated into a byte array and then injected into the Lightstreamer kernel as a single field, instead of being spread over different fields as simple strings (as the original adapter does). Here lies the power of AMF, as you will be able to push even complex JavaBeans to your Flex clients with ease.
 
 ## Gather Stuff ##
 
