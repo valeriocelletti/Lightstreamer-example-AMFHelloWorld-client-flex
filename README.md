@@ -136,7 +136,7 @@ copy the just unzipped `AMFHelloWorld.swf` file into the `<LS_HOME>/pages` folde
 
 ## Build
 * First of all you'll need a browser, a Flash player, and a JDK.
-* Download from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm) the <b>Lightstreamer Server Presto or Vivace</b> containing the <b>Lightstreamer Flex Client 2.0 SDK</b>.
+* Download from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm) the Lightstreamer Server Presto or Vivace containing the <b>Lightstreamer Flex Client 2.0 SDK</b>.
 * You'll have to compile a Flex application, so you'll need either the [Flex Builder](http://www.adobe.com/mena/products/flex/) or the [Flex SDK](http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK) (the example works with Flex 3 and Flex 4; use Flex 4 only if you're going to use it with the Flex Builder, otherwise you may have problems with the mxmlc.
 * Download the complete source of the Flex client from the `AMFHelloWorld.mxml` source file of this project.
 * Compile the `AMFHelloWorld.mxml` into a swf file using the Flex SDK:
