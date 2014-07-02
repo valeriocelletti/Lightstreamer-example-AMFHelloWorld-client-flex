@@ -127,7 +127,8 @@ You've seen how to push Objects instead of Strings from a Lightstreamer server t
 
 ## Install
 
-* Prerequisite: the ["Hello World" Tutorial - Java SE (AMF) Adapter](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java) has to be deployed in your local Lightstreamer Server instance.
+Note that, as prerequisite, the ["Hello World" Tutorial - Java SE (AMF) Adapter](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java) has to be deployed in your local Lightstreamer server instance. Please check out that project and follow the installation instructions provided with it.
+
 * Get `deploy.zip` file of the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex/releases), unzip it and
 copy the just unzipped `AMFHelloWorld.swf` file into the `<LS_HOME>/pages` folder of your Lightstreamer Server instance.
 * Start the Lightstreamer Server
