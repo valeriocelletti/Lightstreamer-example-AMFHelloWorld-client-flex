@@ -127,13 +127,11 @@ You've seen how to push Objects instead of Strings from a Lightstreamer server t
 
 ## Install
 
-Note that, as prerequisite, the ["Hello World" Tutorial - Java SE (AMF) Adapter](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java) has to be deployed in your local Lightstreamer server instance. Please check out that project and follow the installation instructions provided with it.
-
+* As prerequisite, the ["Hello World" Tutorial - Java SE (AMF) Adapter](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java) has to be deployed in your local Lightstreamer server instance. Please check out that project and follow the installation instructions provided with it.
 * Get `deploy.zip` file of the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex/releases), unzip it and
 copy the just unzipped `AMFHelloWorld.swf` file into the `<LS_HOME>/pages` folder of your Lightstreamer Server instance.
 * Start the Lightstreamer Server
 * Open your browser and point it to: [http://localhost:8080/AMFHelloWorld.swf](http://localhost:8080/AMFHelloWorld.swf)
-
 
 ## Build
 * First of all you'll need a browser, a Flash player, and a JDK.
@@ -152,14 +150,14 @@ Note that if you're using a 64-bit JVM you may have some issues running mxmlc; u
 
 ## See Also
 
-### Lightstreamer Adapters Needed by This Client ##
+### Lightstreamer Adapters Needed by This Client
 <!-- START RELATED_ENTRIES -->
 
 * [Lightstreamer - "Hello World" Tutorial - Java SE (AMF) Adapter](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java)
 
 <!-- END RELATED_ENTRIES -->
 
-### Related Projects ##
+### Related Projects
 
 * [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript)
 * [Lightstreamer - "Hello World" Tutorial - Java Adapter](https://github.com/Weswit/Lightstreamer-example-HelloWorld-adapter-java)
