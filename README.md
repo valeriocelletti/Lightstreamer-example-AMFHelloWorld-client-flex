@@ -37,7 +37,7 @@ For this tutorial, I'm assuming you have already read the ["Hello World" Tutoria
 
 On the client, the result of this tutorial will be quite similar to the one obtained with the original [Lightstreamer - "Hello World" Tutorial - HTML Client](https://github.com/Weswit/Lightstreamer-example-HelloWorld-client-javascript), but in Flex: we'll get a string alternating some different values (Hello AMF World) and a timestamp. On the server-side, data will be encapsulated into a <b>JavaBean</b> containing a String and a Date instance. This bean will be translated into a byte array and then injected into the Lightstreamer kernel as a single field, instead of being spread over different fields as simple strings (as the original adapter does). Here lies the power of AMF, as you will be able to push even complex JavaBeans to your Flex clients with ease.
 
-### A Look at the Code
+### Dig the Code
 
 The front-end of our application will be a simple .mxml file compiled into a .swf. Open your text editor and start writing a mxml file (notice the creationComplete event):
 
@@ -126,7 +126,7 @@ The complete modified source of the Flex client is shown in the "AMFHelloWorld_D
 You've seen how to push Objects instead of Strings from a Lightstreamer server to a Flex client. You can exploit this technique to push complex data structures, but obviously, doing so you'll lose some of the optimizations offered by Lightstreamer protocol. For example, the merging algorithm (of the MERGE mode) is applied to the entire bean instead of being applied to each single field, so that every time a property within the bean changes, the entire bean is pushed to the client, not only the changed value. As with anything regarding engineering you'll have to choose the trade-off that optimizes properly for your application.
 
 ## Install
-
+If you want to install a version of this demo pointing to your local Lightstreamer Server, follow these steps.
 * As prerequisite, the ["Hello World" Tutorial - Java SE (AMF) Adapter](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-adapter-java) has to be deployed in your local Lightstreamer server instance. Please check out that project and follow the installation instructions provided with it.
 * Get `deploy.zip` file of the [latest release](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex/releases), unzip it and
 copy the just unzipped `AMFHelloWorld.swf` file into the `<LS_HOME>/pages` folder of your Lightstreamer Server instance.
@@ -134,6 +134,7 @@ copy the just unzipped `AMFHelloWorld.swf` file into the `<LS_HOME>/pages` folde
 * Open your browser and point it to: [http://localhost:8080/AMFHelloWorld.swf](http://localhost:8080/AMFHelloWorld.swf)
 
 ## Build
+To build your own version of `AMFHelloWorld.swf`, instead of using the one provided in the `deploy.zip` file from the [Install](https://github.com/Weswit/Lightstreamer-example-AMFHelloWorld-client-flex#install) section above, follow these steps.
 * First of all you'll need a browser, a Flash player, and a JDK.
 * Download from [Lightstreamer Download page](http://www.lightstreamer.com/download.htm) the Lightstreamer Server Presto or Vivace containing the <b>Lightstreamer Flex Client 2.0 SDK</b>.
 * You'll have to compile a Flex application, so you'll need either the [Flex Builder](http://www.adobe.com/mena/products/flex/) or the [Flex SDK](http://opensource.adobe.com/wiki/display/flexsdk/Flex+SDK) (the example works with Flex 3 and Flex 4; use Flex 4 only if you're going to use it with the Flex Builder, otherwise you may have problems with the mxmlc.
